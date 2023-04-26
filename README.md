@@ -1,2 +1,2 @@
-# practice-java-bingo-mvvm
+# practice-java-bingo-game
 Javaの基礎練習用リポジトリ
