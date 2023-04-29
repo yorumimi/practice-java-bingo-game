@@ -2,47 +2,40 @@ package bingoGame;
 
 public final class GameManager {
 
-	private final BingoGameController controller;
+  private final BingoGameController controller;
 
-	private final BingoCardModel cardModel;
-	private final BingoCardView cardView;
+  private final BingoCardModel cardModel;
+  private final BingoCardView cardView;
 
-	private final BingoCageModel cageModel;
-	private final BingoCageView cageView;
-	
+  private final BingoCageModel cageModel;
+  private final BingoCageView cageView;
 
-	GameManager() {
 
-		cardModel = new BingoCardModel();
-		cardView = new BingoCardView();
+  GameManager() {
 
-		cageModel = new BingoCageModel();
-		cageView = new BingoCageView();
+    cardModel = new BingoCardModel();
+    cardView = new BingoCardView();
 
-		controller = new BingoGameController(cageModel, cageView, cardModel, cardView);
-		
-	}
+    cageModel = new BingoCageModel();
+    cageView = new BingoCageView();
 
-	private void setup() {
-		
-		controller.setup();
-		
-	}
+    controller = new BingoGameController(cageModel, cageView, cardModel, cardView);
 
-	private boolean update() {
-		
-		controller.update();
-		return true;
+  }
 
-	}
+  private void setup() {
+    controller.setup();
+  }
 
-	public void loop() {
+  private boolean update() {
+    return controller.update();
+  }
 
-		setup();
-
-		while (update()) {
-
-		}
-
-	}
+  public void loop() {
+    setup();
+    while (!
+        update()) {
+    }
+  }
 }
+
